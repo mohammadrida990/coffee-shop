@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --accent: #f08c09;
 }
 
 @theme inline {
@@ -10,17 +12,37 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
   }
 }
 
 body {
-  background: var(--background);
+  @apply leading-relaxed;
+  /* background: var(--background); */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.h1 {
+  @apply text-[70px] xl:text-[150px] leading-[1.1] font-semibold;
+}
+
+.h2 {
+  @apply text-[56px] xl:text-[80px] leading-[1.2] font-bold;
+}
+
+.lead {
+  @apply text-lg;
+}
+
+.btn {
+  @apply min-w-[156px] h-[54px] px-6  uppercase font-semibold tracking-[.15rem] transition-all;
+}
+/* bg-accent hover:bg-accent-hover  text-primary */
