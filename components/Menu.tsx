@@ -114,6 +114,7 @@ const Menu = () => {
                       src={item.img}
                       fill
                       alt=""
+                      sizes="50vh"
                       priority
                       quality={100}
                       className="object-cover"

@@ -196,6 +196,7 @@ const About = () => {
                         src={item.imgSrc}
                         alt=""
                         fill
+                        sizes="50vh"
                         className="object-cover"
                         quality={100}
                         priority

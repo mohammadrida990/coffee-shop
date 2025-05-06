@@ -4,6 +4,7 @@ import Explore from "@/components/Explore";
 import Hero from "@/components/Hero";
 import Menu from "@/components/Menu";
 import Opening from "@/components/Opening";
+import Photos from "@/components/Photos";
 import React, { useEffect } from "react";
 
 const Home = () => {
@@ -27,7 +28,9 @@ const Home = () => {
 
       <Opening />
 
-      <div className="h-[4000px]"></div>
+      <Photos />
+
+      <div className="h-[25vh]"></div>
     </div>
   );
 };

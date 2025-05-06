@@ -13,6 +13,7 @@ const Explore = () => {
                   <Image
                     src="/assets/logo.png"
                     alt=""
+                    sizes="50vh"
                     width={56}
                     height={56}
                     className="object-cover"
@@ -38,6 +39,7 @@ const Explore = () => {
                   <Image
                     src="/assets/logo.png"
                     alt=""
+                    sizes="50vh"
                     width={56}
                     height={56}
                     className="object-cover"
@@ -62,6 +64,7 @@ const Explore = () => {
                 src="/assets/cup.svg"
                 alt=""
                 fill
+                sizes="50vh"
                 className="object-cover"
                 priority
                 quality={100}
@@ -78,6 +81,7 @@ const Explore = () => {
                   <Image
                     src="/assets/logo.png"
                     alt=""
+                    sizes="50vh"
                     width={56}
                     height={56}
                     className="object-cover"
@@ -104,6 +108,7 @@ const Explore = () => {
                     src="/assets/logo.png"
                     alt=""
                     width={56}
+                    sizes="50vh"
                     height={56}
                     className="object-cover"
                   />

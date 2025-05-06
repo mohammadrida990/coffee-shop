@@ -14,6 +14,7 @@ const Opening = () => {
           alt=""
           fill
           priority
+          sizes="50vh"
           quality={100}
           className="object-cover"
         />
@@ -25,7 +26,7 @@ const Opening = () => {
         <div className="absolute bg-black/60 top-0 w-full h-full z-10" />
 
         <div className="z-20 flex flex-col items-center justify-center">
-          <h2 className="h2 text-white mb-4 font-mystery-quest">
+          <h2 className="h2 mb-4 font-mystery-quest text-amber-500">
             Opening hours
           </h2>
 
@@ -37,6 +38,7 @@ const Opening = () => {
               fill
               quality={100}
               priority
+              sizes="50vh"
               alt=""
               className="object-cover"
             />

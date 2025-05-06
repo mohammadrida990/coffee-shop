@@ -1,49 +1,58 @@
 "use client";
 
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import Badge from "./Badge";
 import Separator from "./Separator";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
-  gsap.registerPlugin(SplitText);
-  useLayoutEffect(() => {
+  gsap.registerPlugin(SplitText, useGSAP);
+  useGSAP(() => {
     const splitTitle = SplitText.create(".hero", { type: "words, chars" });
     const splitContent = SplitText.create(".lead", {
       type: "chars, words, lines",
     });
+    const animation = gsap.timeline({
+      delay: 2,
+    });
+    const xxx = () => {
+      animation
 
-    const animation = gsap
-      .timeline()
-      .from(splitTitle.words, {
-        duration: 1,
-        rotation: "random(-360, 360)",
-        yPercent: "random([-100,100])",
-        y: 100,
-        autoAlpha: 0,
-        mask: "char",
-        stagger: {
-          amount: 0.5,
-          from: "random",
-        },
-      })
-      .from(splitContent.chars, {
-        duration: 1,
-        rotation: "random(-360, 360)",
-        yPercent: "random([-100,100])",
-        y: 100,
-        autoAlpha: 0,
-        mask: "char",
-        stagger: {
-          amount: 0.5,
-          from: "random",
-        },
-      });
-
-    return () => {
-      animation.kill();
+        .from(splitTitle.words, {
+          duration: 1,
+          rotation: "random(-360, 360)",
+          yPercent: "random([-100,100])",
+          y: 100,
+          autoAlpha: 0,
+          mask: "char",
+          stagger: {
+            amount: 0.5,
+            from: "random",
+          },
+        })
+        .from(splitContent.chars, {
+          duration: 1,
+          rotation: "random(-360, 360)",
+          yPercent: "random([-100,100])",
+          y: 100,
+          autoAlpha: 0,
+          mask: "char",
+          stagger: {
+            amount: 0.5,
+            from: "random",
+          },
+        });
     };
+    if (document.readyState === "complete") {
+      xxx();
+    } else {
+      window.addEventListener("load", xxx);
+      return () => {
+        animation.kill();
+      };
+    }
   }, []);
 
   return (

@@ -8,6 +8,7 @@ const Badge = ({ containerStyles }: { containerStyles: string }) => {
         src="/assets/logo.png"
         fill
         alt=""
+        sizes="50vh"
         className="object-contain"
         priority
         quality={100}
