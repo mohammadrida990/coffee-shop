@@ -67,7 +67,7 @@ const Hero = () => {
           className="flex-1 flex flex-col text-center justify-center items-center xl:pb-12 gap-10 h-full"
         >
           <div className="flex flex-col items-center ">
-            <Badge containerStyles="hidden xl:flex xl:w-[180px] xl:h-[180px]" />
+            <Badge containerStyles="hidden w-[40px] h-[40px] xl:flex xl:w-[160px] xl:h-[160px] xl:top-5" />
 
             <h1 className="h1 hero font-mystery-quest">
               <span className="text-accent">Coffee </span>
