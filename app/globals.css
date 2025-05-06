@@ -4,14 +4,13 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --accent: #f08c09;
+  --accent: #583201;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mystery-quest: var(--font-mystery-quest);
   --color-accent: var(--accent);
 }
 
@@ -43,6 +42,5 @@ body {
 }
 
 .btn {
-  @apply min-w-[156px] h-[54px] px-6  uppercase font-semibold tracking-[.15rem] transition-all;
+  @apply min-w-[156px] h-[54px] px-6 bg-amber-600 hover:bg-amber-500  uppercase font-semibold tracking-[.15rem] transition-all text-white rounded-3xl;
 }
-/* bg-accent hover:bg-accent-hover  text-primary */

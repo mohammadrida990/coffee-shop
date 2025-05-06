@@ -29,7 +29,6 @@ const heightAnimation = {
 const links = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/" },
-  { name: "Contact", href: "/" },
   { name: "About", href: "/" },
 ];
 const Nav = () => {

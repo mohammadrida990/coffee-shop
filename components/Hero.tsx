@@ -1,8 +1,51 @@
-import React from "react";
+"use client";
+
+import React, { useLayoutEffect } from "react";
 import Badge from "./Badge";
 import Separator from "./Separator";
+import gsap from "gsap";
+import SplitText from "gsap/SplitText";
 
 const Hero = () => {
+  gsap.registerPlugin(SplitText);
+  useLayoutEffect(() => {
+    const splitTitle = SplitText.create(".hero", { type: "words, chars" });
+    const splitContent = SplitText.create(".lead", {
+      type: "chars, words, lines",
+    });
+
+    const animation = gsap
+      .timeline()
+      .from(splitTitle.words, {
+        duration: 1,
+        rotation: "random(-360, 360)",
+        yPercent: "random([-100,100])",
+        y: 100,
+        autoAlpha: 0,
+        mask: "char",
+        stagger: {
+          amount: 0.5,
+          from: "random",
+        },
+      })
+      .from(splitContent.chars, {
+        duration: 1,
+        rotation: "random(-360, 360)",
+        yPercent: "random([-100,100])",
+        y: 100,
+        autoAlpha: 0,
+        mask: "char",
+        stagger: {
+          amount: 0.5,
+          from: "random",
+        },
+      });
+
+    return () => {
+      animation.kill();
+    };
+  }, []);
+
   return (
     <section className="h-[80vh] xl:h-screen relative text-white">
       <div className="absolute w-full h-full z-10 bg-black/90" />
@@ -26,18 +69,22 @@ const Hero = () => {
           <div className="flex flex-col items-center ">
             <Badge containerStyles="hidden xl:flex xl:w-[180px] xl:h-[180px]" />
 
-            <h1 className="h1 text-white">
-              <span className="text-accent">Coffee</span>Rida
+            <h1 className="h1 hero font-mystery-quest">
+              <span className="text-accent">Coffee </span>
+              <span className="text-amber-100">Rida</span>
             </h1>
           </div>
 
           <Separator />
 
-          <p className="lead font-light max-w-[300px] md:max-w-[430px] xl:max-w-[560px] mb-4">
-            hjjhghgjhbjhkjbhij
+          <p className="lead font-light italic max-w-[300px] md:max-w-[430px] xl:max-w-[560px] mb-4 ">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis saepe
+            perspiciatis voluptate fugit at, aliquid eligendi autem et dolore,
+            modi beatae asperiores. Laborum ab illum neque optio. Modi,
+            reprehenderit vero!
           </p>
 
-          <button>our menu</button>
+          <button className="btn">menu</button>
         </div>
       </div>
     </section>
