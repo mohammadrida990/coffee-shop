@@ -62,7 +62,10 @@ const Hero = () => {
       <video
         autoPlay
         loop
+        preload="none"
         muted
+        playsInline
+        poster="/assets/coffee.jpg"
         className="absolute top-0 left-0 h-full w-full object-cover "
       >
         <source src="/assets/208001_small.mp4" type="video/mp4" />

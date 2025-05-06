@@ -7,6 +7,7 @@ const mysteryQuest = Mystery_Quest({
   variable: "--font-mystery-quest",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
