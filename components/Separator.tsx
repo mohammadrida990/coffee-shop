@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-const Separator = ({ bg = "text-amber-100" }: { bg: string }) => {
+const Separator = ({ bg = "text-amber-100" }: { bg?: string }) => {
   return (
     <div className="relative w-[160px] h-[26px] mx-auto overflow-hidden">
       <motion.hr
