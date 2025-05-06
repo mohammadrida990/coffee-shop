@@ -1,6 +1,5 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Nav from "./Nav";
@@ -13,20 +12,17 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link
             href="/"
-            className="relative w-[100px] h-[40px] xl:w-[60px] xl:h-[30px] z-[60] -top-5 "
+            className="relative w-[100px] h-[40px] xl:w-[60px] xl:h-[30px] z-[60] -top-5  "
           >
-            <Image
-              src="/assets/xxx.svg"
-              alt="Logo"
-              width={60}
-              height={30}
-              className="object-contain"
-            />
+            <div className="font-mystery-quest flex flex-row top-5 relative text-2xl">
+              <span className="text-amber-600">Coffee </span>
+              <span className="text-amber-100">Rida</span>
+            </div>
           </Link>
 
           <button
             onClick={() => setActiveNav(!activeNv)}
-            className="w-8 h-6 text-accent relative flex items-center justify-center z-[60] outline-none "
+            className="w-8 h-6 text-amber-600 relative flex items-center justify-center z-[60] outline-none "
           >
             <span
               className={`w-full h-[1.5px] bg-current absolute left-0 will-change-transform transition-transform duration-300 ${

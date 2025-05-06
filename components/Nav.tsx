@@ -60,7 +60,7 @@ const Nav = () => {
       exit="close"
     >
       <div className="container mx-auto h-full flex flex-col justify-center items-center">
-        <ul className="flex flex-col gap-10 font-semibold text-4xl text-accent items-center uppercase">
+        <ul className="flex flex-col gap-10 font-semibold text-4xl text-amber-600 items-center uppercase">
           {links.map((link, index) => (
             <Link
               href={link.href}
