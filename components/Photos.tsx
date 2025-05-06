@@ -55,7 +55,7 @@ const Photos = () => {
             fill
             sizes="50vh"
             quality={100}
-            className="object-top-left object-contain md:object-cover md:object-center"
+            className="object-contain md:object-cover"
           />
         </div>
 
@@ -66,7 +66,7 @@ const Photos = () => {
             fill
             sizes="50vh"
             quality={100}
-            className="object-top-left object-contain md:object-cover md:object-center"
+            className="object-contain md:object-cover"
           />
         </div>
 
@@ -77,7 +77,7 @@ const Photos = () => {
             fill
             sizes="50vh"
             quality={100}
-            className="object-top-left object-contain md:object-cover md:object-center"
+            className="object-contain md:object-cover"
           />
         </div>
       </div>
