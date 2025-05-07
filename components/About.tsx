@@ -76,20 +76,20 @@ const About = () => {
             start: "left center",
             end: "right center",
             toggleActions: "play reverse play reverse",
-            onEnter: () => {
-              gsap.set(splitTitle.chars, {
-                opacity: 0,
-                y: 60,
-                rotation: -30,
-              });
-            },
-            onLeaveBack: () => {
-              gsap.set(splitTitle.chars, {
-                opacity: 0,
-                y: 60,
-                rotation: -30,
-              });
-            },
+            // onEnter: () => {
+            //   gsap.set(splitTitle.chars, {
+            //     opacity: 0,
+            //     y: 60,
+            //     rotation: -30,
+            //   });
+            // },
+            // onLeaveBack: () => {
+            //   gsap.set(splitTitle.chars, {
+            //     opacity: 0,
+            //     y: 60,
+            //     rotation: -30,
+            //   });
+            // },
           },
         })
         .fromTo(
@@ -98,22 +98,11 @@ const About = () => {
             opacity: 0,
             y: 60,
             rotation: -30,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            rotation: 0,
-            stagger: 0.05,
-            duration: 0.5,
+            stagger: {
+              amount: 0.5,
+              from: "random",
+            },
             ease: "power2.out",
-          }
-        )
-        .fromTo(
-          splitDescription.chars,
-          {
-            opacity: 0,
-            y: 60,
-            rotation: -30,
           },
           {
             opacity: 1,
@@ -123,10 +112,22 @@ const About = () => {
               amount: 0.5,
               from: "random",
             },
-            duration: 0.2,
+            duration: 0.5,
             ease: "power2.out",
           }
-        );
+        )
+        .from(splitDescription.chars, {
+          duration: 1,
+          rotation: "random(-360, 360)",
+          yPercent: "random([-100,100])",
+          y: 100,
+          autoAlpha: 0,
+          mask: "char",
+          stagger: {
+            amount: 0.5,
+            from: "random",
+          },
+        });
     });
 
     return () => {
