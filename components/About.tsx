@@ -68,14 +68,8 @@ const About = () => {
       });
 
       splitInstances.push(splitTitle);
-      gsap.fromTo(
-        splitTitle.chars,
-        {
-          opacity: 0,
-          y: 60,
-          rotation: -30,
-        },
-        {
+      gsap
+        .timeline({
           scrollTrigger: {
             trigger: block as HTMLElement,
             containerAnimation: animation,
@@ -97,54 +91,42 @@ const About = () => {
               });
             },
           },
-          opacity: 1,
-          y: 0,
-          rotation: 0,
-          stagger: 0.05,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
-      gsap.fromTo(
-        splitDescription.chars,
-        {
-          opacity: 0,
-          y: 60,
-          rotation: -30,
-        },
-        {
-          scrollTrigger: {
-            trigger: block as HTMLElement,
-            containerAnimation: animation,
-            start: "left center",
-            end: "right center",
-            toggleActions: "play reverse play reverse",
-            onEnter: () => {
-              gsap.set(splitDescription.chars, {
-                opacity: 0,
-                y: 60,
-                rotation: -30,
-              });
-            },
-            onLeaveBack: () => {
-              gsap.set(splitDescription.chars, {
-                opacity: 0,
-                y: 60,
-                rotation: -30,
-              });
-            },
+        })
+        .fromTo(
+          splitTitle.chars,
+          {
+            opacity: 0,
+            y: 60,
+            rotation: -30,
           },
-          opacity: 1,
-          y: 0,
-          rotation: 0,
-          stagger: {
-            amount: 0.5,
-            from: "random",
+          {
+            opacity: 1,
+            y: 0,
+            rotation: 0,
+            stagger: 0.05,
+            duration: 0.5,
+            ease: "power2.out",
+          }
+        )
+        .fromTo(
+          splitDescription.chars,
+          {
+            opacity: 0,
+            y: 60,
+            rotation: -30,
           },
-          duration: 0.2,
-          ease: "power2.out",
-        }
-      );
+          {
+            opacity: 1,
+            y: 0,
+            rotation: 0,
+            stagger: {
+              amount: 0.5,
+              from: "random",
+            },
+            duration: 0.2,
+            ease: "power2.out",
+          }
+        );
     });
 
     return () => {

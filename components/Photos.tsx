@@ -15,27 +15,27 @@ const Photos = () => {
   useGSAP(() => {
     const images = gsap.utils.toArray<HTMLElement>(".photo-layer");
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "+=300%",
-        scrub: true,
-        pin: containerRef.current,
-      },
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=300%",
+          scrub: true,
+          pin: containerRef.current,
+        },
+      })
+      .fromTo(
+        images[1],
+        { x: "100%", opacity: 0 },
+        { x: "0%", opacity: 1, duration: 1 }
+      )
 
-    timeline.fromTo(
-      images[1],
-      { x: "100%", opacity: 0 },
-      { x: "0%", opacity: 1, duration: 1 }
-    );
-
-    timeline.fromTo(
-      images[2],
-      { y: "-100%", opacity: 0 },
-      { y: "0%", opacity: 1, duration: 1 }
-    );
+      .fromTo(
+        images[2],
+        { y: "-100%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 1 }
+      );
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

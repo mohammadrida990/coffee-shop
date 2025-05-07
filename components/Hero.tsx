@@ -15,10 +15,11 @@ const Hero = () => {
       type: "chars, words, lines",
     });
     const animation = gsap.timeline({
-      delay: 2,
+      delay: 1,
     });
     const xxx = () => {
       animation
+        .set(".main-box", { opacity: 1 })
 
         .from(splitTitle.words, {
           duration: 1,
@@ -56,7 +57,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-[80vh] xl:h-screen relative text-white">
+    <section className="h-[80vh] xl:h-screen relative text-white ">
       <div className="absolute w-full h-full z-10 bg-black/90" />
 
       <video
@@ -72,7 +73,7 @@ const Hero = () => {
         your browser does not support the video tag
       </video>
 
-      <div className="container mx-auto h-full flex flex-col xl:flex-row items-center z-30 relative">
+      <div className="main-box opacity-0 container mx-auto h-full flex flex-col xl:flex-row items-center z-30 relative">
         <div
           data-scroll
           data-scroll-speed="0.4"
