@@ -116,16 +116,13 @@ const About = () => {
             ease: "power2.out",
           }
         )
-        .from(splitDescription.chars, {
+        .from(splitDescription.words, {
           duration: 1,
-          rotation: "random(-360, 360)",
-          yPercent: "random([-100,100])",
           y: 100,
           autoAlpha: 0,
           mask: "char",
           stagger: {
             amount: 0.5,
-            from: "random",
           },
         });
     });
