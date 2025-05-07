@@ -7,7 +7,7 @@ import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 
-const Hero = () => {
+const Hero = ({ onMenuClick }: { onMenuClick: () => void }) => {
   gsap.registerPlugin(SplitText, useGSAP);
   useGSAP(() => {
     const splitTitle = SplitText.create(".hero", { type: "words, chars" });
@@ -97,7 +97,9 @@ const Hero = () => {
             reprehenderit vero!
           </p>
 
-          <button className="btn">menu</button>
+          <button onClick={onMenuClick} className="btn">
+            menu
+          </button>
         </div>
       </div>
     </section>

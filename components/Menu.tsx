@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Separator from "./Separator";
 import Image from "next/image";
 
@@ -85,9 +85,9 @@ const data = [
   },
 ];
 
-const Menu = () => {
+const Menu = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <section className="p-12 pb-16 xl:pt-16 xl:pb-36">
+    <section ref={ref} className="p-12 pb-16 xl:pt-16 xl:pb-36">
       <div className="container mx-auto">
         <div className="flex flex-col  gap-4 mb-12 xl:mb-24">
           <h2 className="h2 text-center text-amber-900 text-4xl capitalize">
@@ -144,6 +144,6 @@ const Menu = () => {
       </div>
     </section>
   );
-};
-
+});
+Menu.displayName = "Menu";
 export default Menu;

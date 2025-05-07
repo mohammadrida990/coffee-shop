@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import Menu from "@/components/Menu";
 import Opening from "@/components/Opening";
 import Photos from "@/components/Photos";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Home = () => {
   useEffect(() => {
@@ -16,15 +16,21 @@ const Home = () => {
 
     loadLocomotiveScroll();
   }, []);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const scrollToMenu = () => {
+    menuRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="h-full overflow-x-hidden">
-      <Hero />
+      <Hero onMenuClick={scrollToMenu} />
 
       <Explore />
 
       <About />
 
-      <Menu />
+      <Menu ref={menuRef} />
 
       <Opening />
 
